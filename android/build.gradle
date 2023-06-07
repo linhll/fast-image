@@ -58,6 +58,7 @@ repositories {
 }
 
 def glideVersion = safeExtGet('glideVersion', '4.12.0')
+def glidePluginVersion = safeExtGet('glideAnimationPluginVersion', null)
 
 dependencies {
     //noinspection GradleDynamicVersion
@@ -65,4 +66,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:${glideVersion}"
     implementation "com.github.bumptech.glide:okhttp3-integration:${glideVersion}"
     annotationProcessor "com.github.bumptech.glide:compiler:${glideVersion}"
+    if(glidePluginVersion != null){
+        implementation "com.github.penfeizhou.android.animation:glide-plugin:${glidePluginVersion}"
+    }
 }
